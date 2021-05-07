@@ -65,7 +65,7 @@ class Example(Frame):
                 print("Complete Mean Filter")
                 messagebox.showinfo("Complete", "Done")
             else:
-                print("Lọc thông thấp (Lọc trung bình có trọng số)")
+                # print("Lọc thông thấp (Lọc trung bình có trọng số)")
                 self.img2 = cv2.imread(self.path,0)
                 self.img_convertt = lowpassfilter.LowPassFilter(self.img2, 2)
                 # print(self.img_convertt)
@@ -74,8 +74,8 @@ class Example(Frame):
                 Label.image = self.imggg
                 # print("convert")
                 canvas_img_convert.create_image(0,0, image = self.imggg, anchor = tkinter.NW)
-                messagebox.showinfo("Complete", "Done")
                 print("Complete Low Pass Filter")
+                messagebox.showinfo("Complete", "Done")
 
 def frame():
     global windows,canvas_img_origin,canvas_img_convert,combo
