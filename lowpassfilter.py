@@ -6,7 +6,8 @@ from scipy import ndimage
 # lọc thông thấp
 def LowPassFilter(image, x):
 
-    kernel_low_pass_filter = np.asanyarray([1/pow(x+2,2),x/pow(x+2,2),1/pow(x+2,2),x/pow(x+2,2),pow(x,2)/pow(x+2,2),x/pow(x+2,2),1/pow(x+2,2),x/pow(x+2,2),1/pow(x+2,2)]).reshape((3,3))
+    kernel_low_pass_filter = np.asanyarray([1/pow(x+2,2),x/pow(x+2,2),1/pow(x+2,2),x/pow(x+2,2),pow(x,2)/pow(x+2,2)
+                                ,x/pow(x+2,2),1/pow(x+2,2),x/pow(x+2,2),1/pow(x+2,2)]).reshape((3,3))
     imgFloat = image.astype(float)
     # nhân tích chập (convolve) 
     conv = ndimage.convolve(imgFloat,kernel_low_pass_filter)
